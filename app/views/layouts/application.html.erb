@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MFA Test Website</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	  
+    <header>
+		<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+		      <h5 class="my-0 mr-md-auto font-weight-normal">Company name (Secured by Acceptto eGuardian® MFA)</h5>
+		      <nav class="my-2 my-md-0 mr-md-3">
+				  <% if user_signed_in? %>
+		  		    <a class="p-2 text-dark" href="#">Welcome <%= current_user.email %>!</a>
+		  			<a class="p-2 text-dark" href="/dashboard/index">Dashboard</a>
+		  			<%= link_to('Logout', destroy_user_session_path, :method => :delete,:id => 'login', class: 'btn btn-outline-primary') %>
+				  <% else %>
+					<%= link_to('New user? Sign up', new_user_registration_path, class: 'btn btn-outline-primary')  %>
+					<%= link_to('Sign in', new_user_session_path,:id => 'login', class: 'btn btn-outline-primary')  %>
+		          <% end %>
+		      </nav>
+		    </div>
+    </header>
+
+    <main role="main">
+		 <div class="container">
+			<%= yield %>
+		 </div>
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+	  
+    
+  </body>
+</html>

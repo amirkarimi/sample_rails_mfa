@@ -1,0 +1,15 @@
+<h3>Dashboard</h3>
+
+<div style="padding-top: 10px">
+	Welcome <%= current_user.email %>!
+</div>
+<div style="padding-top: 10px">
+<% if !current_user.mfa_access_token.present? %>
+   <a href='<%= "#{Rails.configuration.mfa_site}/mfa/email?uid=#{Rails.configuration.mfa_app_uid}" %>' class="btn btn-primary">Enable MFA</a>
+<% else %>
+   Congratulations! Your account is MFA Enabled!
+   <br />
+   <br />
+   <%= link_to 'Disable MFA', :dashboard_disable_mfa, class: 'btn btn-danger' %>
+<% end %>
+</div>
