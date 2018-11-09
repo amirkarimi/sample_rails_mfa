@@ -62,6 +62,8 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "mfa_test_#{Rails.env}"
+  
+  config.action_mailer.default_url_options = { host: 'sample.acceptto.com' }
 
   config.action_mailer.perform_caching = false
 
@@ -91,4 +93,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.mfa_app_uid = '95a6289de233b71ceaeecc4752e0041321f3eb1583b8a6c50b901091207c6458'
+  config.mfa_app_secret = '337135e55dc6cc272fd8d7442d64a717afc8d964eba7e03bad10ed4d0f52e5ec'
+  config.mfa_site = 'https://mfa.acceptto.com'
 end
