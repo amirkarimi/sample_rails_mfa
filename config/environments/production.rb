@@ -94,7 +94,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.mfa_app_uid = '95a6289de233b71ceaeecc4752e0041321f3eb1583b8a6c50b901091207c6458'
-  config.mfa_app_secret = '337135e55dc6cc272fd8d7442d64a717afc8d964eba7e03bad10ed4d0f52e5ec'
+  config.mfa_app_uid = '5dad759b5689e7a4e11d5b728787a0ab0a84f861803c0b47b0cca269220cffbb'
+  config.mfa_app_secret = 'b924a86e276e5cd4551ecfe6e14a38d9d1c27599dceba231697ef6656022a30b'
   config.mfa_site = 'https://mfa.acceptto.com'
 end
