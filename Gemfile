@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'acceptto', '~> 1.2', :github => 'acceptto-corp/mfa-web-gem'
 
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3'
 
 gem 'jquery-rails'
 
